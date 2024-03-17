@@ -92,42 +92,29 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- Form fields and buttons similar, with text replacements as required -->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Ingresa tu nombre completo..." data-sb-validations="required" />
-                                <label for="name">Nombre Completo</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Escribe tu nombre</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
-                                <label for="email">Correo Electrónico</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Un correo es requerido.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">El correo no es válido.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Número de Teléfono</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">Un número de teléfono es requerido.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Ingresa tu mensaje aquí..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Mensaje</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">Escribe tu mensaje.</div>
-                            </div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Enviar</button>
-                        </form>
-                    </div>
-                </div>
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-xl-7">
+        <form id="contactForm" action="http://localhost:3000/enviarCorreo" method="POST">
+            <div class="form-floating mb-3">
+                <input class="form-control" name="nombre" id="name" type="text" placeholder="Ingresa tu nombre completo..." required />
+                <label for="name">Nombre Completo</label>
             </div>
-        </section>
-        <!-- Footer and other sections remain the same, with content replacement as needed -->
-    </body>
+            <div class="form-floating mb-3">
+                <input class="form-control" name="correo" id="email" type="email" placeholder="nombre@ejemplo.com" required />
+                <label for="email">Correo Electrónico</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" name="mensaje" id="message" placeholder="Ingresa tu mensaje aquí..." required></textarea>
+                <label for="message">Mensaje</label>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</section>
+<!-- Footer and other sections remain the same -->
+</body>
 </html>

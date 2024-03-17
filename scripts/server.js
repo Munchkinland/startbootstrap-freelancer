@@ -10,14 +10,14 @@ app.post('/enviarCorreo', (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'tuCorreo@gmail.com',
-            pass: 'tuClaveDeAplicacion'
+            user: 'rubiwankenobi@gmail.com',
+            pass: 'zifk iwdl reux sokq'
         }
     });
 
     let mailOptions = {
         from: req.body.correo,
-        to: 'tuCorreo@gmail.com',
+        to: 'rubiwankenobi@gmail.com',
         subject: `Mensaje de ${req.body.nombre}`,
         text: req.body.mensaje
     };
