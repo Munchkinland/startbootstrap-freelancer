@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto LinkedIn</title>
+    <style>
+        #submitBtn {
+            background-color: #0072b1; /* Color de fondo de LinkedIn */
+            color: white; /* Color del texto */
+            padding: 10px 20px; /* Espaciado interno */
+            border: none; /* Sin bordes */
+            border-radius: 5px; /* Bordes redondeados */
+            cursor: pointer; /* Cursor en forma de mano al pasar por encima */
+            font-size: 16px; /* Tamaño del texto */
+        }
+        #submitBtn:hover {
+            background-color: #005682; /* Color al pasar el mouse por encima */
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<textarea id="messageText" placeholder="Escribe tu mensaje aquí..."></textarea><br>
+<button id="submitBtn" onclick="copyMessage()">Copiar Mensaje</button>
+
+<script>
+function copyMessage() {
+    // Copiar el mensaje al portapapeles
+    const message = document.getElementById("messageText").value;
+    navigator.clipboard.writeText(message).then(() => {
+        // Abrir el chat de LinkedIn
+        window.open('https://www.linkedin.com/messaging/thread/new?recipient=rub%C3%A9n-carrasco-143145135', '_blank');
+        alert("Mensaje copiado al portapapeles. Pégalo en el chat de LinkedIn.");
+    }).catch(err => {
+        console.error('Error al copiar el mensaje: ', err);
+    });
+}
+</script>
+
+</body>
+</html>

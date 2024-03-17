@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp Message Sender</title>
+</head>
+<body>
+
+<h2>Enviar mensaje de WhatsApp</h2>
+
+<label for="whatsappMessage">Tu mensaje:</label><br>
+<input type="text" id="whatsappMessage" name="whatsappMessage" placeholder="Escribe tu mensaje aquí"><br>
+<button onclick="sendWhatsAppMessage()">Enviar a WhatsApp</button>
+
+<script>
+function sendWhatsAppMessage() {
+    var message = document.getElementById('whatsappMessage').value;
+    // Asegúrate de reemplazar '608066976' con tu número de WhatsApp, incluyendo el código de país sin '+' o '00'
+    var whatsappURL = `https://wa.me/34608066976?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+}
+</script>
+
+</body>
+</html>
